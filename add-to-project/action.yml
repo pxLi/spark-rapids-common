@@ -13,7 +13,7 @@
 # limitations under the License.
 
 name: "Add to Project"
-description: "Add new issue and pull request to the project"
+description: "Add new issue or pull request to the project"
 inputs:
   owner:
     description: "Repository Owner"
@@ -27,8 +27,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/add-to-project@v1.0.2
+    - name: Add issues or pull request to project
       if: "${{ inputs.owner }}" == 'pxLi' # avoid adding issues from forks
+      uses: actions/add-to-project@v1.0.2
       with:
         project-url: https://github.com/users/pxLi/projects/2
         github-token: ${{ inputs.token }}
