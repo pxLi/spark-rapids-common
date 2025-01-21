@@ -26,5 +26,5 @@ runs:
     - name: Adding to project
       uses: actions/add-to-project@v1.0.2
       with:
-        project-url: https://github.com/orgs/pxli-io/projects/1
+        project-url: https://github.com/users/pxLi/projects/2
         github-token: ${{ inputs.token }}
