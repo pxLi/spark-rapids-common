@@ -24,10 +24,11 @@ on:
 
 jobs:
   Add-to-project:
-    if: "${{ github.repository_owner }}" == 'pxLi' # avoid adding issues from forks
+    if: github.repository_owner == 'pxLi'
+    name: Add new issues and pull requests to the project
     runs-on: ubuntu-latest
     steps:
       - name: add-to-project
         uses: pxLi/spark-rapids-common/add-to-project@pxli-22
         with:
-          token: ${{ secrets.PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
