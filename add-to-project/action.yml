@@ -24,9 +24,10 @@ inputs:
     required: true
     type: string
 
-jobs:
-  add-to-project:
-    if: inputs.owner == 'pxLi' # avoid adding issues from forks
+runs:
+  using: "composite"
+  steps:
+    if: "${{ inputs.owner }}" == 'pxLi' # avoid adding issues from forks
     name: Add new issues and pull requests to project
     runs-on: ubuntu-latest
     steps:
