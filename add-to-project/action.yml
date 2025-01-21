@@ -26,11 +26,11 @@ inputs:
 
 jobs:
   add-to-project:
-    if: "${{ inputs.owner }}" == 'NVIDIA' # avoid adding issues from forks
+    if: "${{ inputs.owner }}" == 'pxLi' # avoid adding issues from forks
     name: Add new issues and pull requests to project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/add-to-project@v1.0.2
         with:
-          project-url: https://github.com/orgs/NVIDIA/projects/4
+          project-url: https://github.com/users/pxLi/projects/2
           github-token: ${{ inputs.token }}

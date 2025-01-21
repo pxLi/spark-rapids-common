@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: add-to-project
-        uses: NVIDIA/spark-rapids-common/add-to-project@main
+        uses: pxLi/spark-rapids-common/add-to-project@main
         with:
           owner: ${{ github.repository_owner }}
           token: ${{ secrets.PROJECT_TOKEN }}
