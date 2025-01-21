@@ -27,11 +27,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-    if: "${{ inputs.owner }}" == 'pxLi' # avoid adding issues from forks
-    name: Add new issues and pull requests to project
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/add-to-project@v1.0.2
-        with:
-          project-url: https://github.com/users/pxLi/projects/2
-          github-token: ${{ inputs.token }}
+    - uses: actions/add-to-project@v1.0.2
+      if: "${{ inputs.owner }}" == 'pxLi' # avoid adding issues from forks
+      with:
+        project-url: https://github.com/users/pxLi/projects/2
+        github-token: ${{ inputs.token }}
