@@ -24,10 +24,10 @@ on:
 
 jobs:
   Add-to-project:
+    if: "${{ github.repository_owner }}" == 'pxLi' # avoid adding issues from forks
     runs-on: ubuntu-latest
     steps:
       - name: add-to-project
         uses: pxLi/spark-rapids-common/add-to-project@pxli-22
         with:
-          owner: ${{ github.repository_owner }}
           token: ${{ secrets.PROJECT_TOKEN }}
