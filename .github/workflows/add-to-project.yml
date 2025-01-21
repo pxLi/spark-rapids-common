@@ -30,4 +30,4 @@ jobs:
       - name: add-to-project
         uses: pxLi/spark-rapids-common/add-to-project@pxli-22
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PROJECT_TOKEN }}
