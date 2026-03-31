@@ -24,10 +24,11 @@ on:
 
 jobs:
   Add-to-project:
-    if: github.repository_owner == 'NVIDIA' # avoid adding issues from forks
+    if: github.repository_owner == 'pxLi' # avoid adding issues from forks
     runs-on: ubuntu-latest
     steps:
       - name: add-to-project
-        uses: NVIDIA/spark-rapids-common/add-to-project@main
+        uses: pxLi/spark-rapids-common/add-to-project@action-node24
         with:
           token: ${{ secrets.PROJECT_TOKEN }}
+          project-url: https://github.com/users/pxLi/projects/2
